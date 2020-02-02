@@ -43,6 +43,9 @@ defmodule PowAssent.Phoenix.AuthorizationController do
 
   @spec process_callback(Conn.t(), map()) :: {:ok, Conn.t()} | {:error, Conn.t()} | {:error, {atom(), map()} | map(), Conn.t()}
   def process_callback(conn, %{"provider" => provider} = params) do
+    IO.inspect provider
+    IO.inspect params
+    IO.inspect conn
     Plug.callback_upsert(conn, provider, params, conn.assigns.callback_url)
   end
 
