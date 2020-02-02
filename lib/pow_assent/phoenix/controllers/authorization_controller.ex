@@ -173,6 +173,7 @@ defmodule PowAssent.Phoenix.AuthorizationController do
 
   defp load_session_params(%{private: %{plug_session: %{"pow_assent_session_params" => params}}} = conn, _opts) do
     IO.inspect "load_session_params"
+    IO.inspect conn
     conn
     |> Conn.put_private(:pow_assent_session_params, params)
     |> Conn.put_session(:pow_assent_session_params, nil)
