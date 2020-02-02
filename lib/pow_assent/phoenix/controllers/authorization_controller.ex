@@ -23,6 +23,7 @@ defmodule PowAssent.Phoenix.AuthorizationController do
 
   @spec respond_new({:ok, binary(), Conn.t()} | {:error, any(), Conn.t()}) :: Conn.t()
   def respond_new({:ok, url, conn}) do
+    IO.inspect conn
     conn
     |> maybe_store_session_params()
     |> maybe_store_request_path()
