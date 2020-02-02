@@ -159,7 +159,7 @@ defmodule PowAssent.Phoenix.AuthorizationController do
     assign(conn, :callback_url, url)
   end
 
-  defp store_session_params(conn, params), do: Conn.put_session(conn, :pow_assent_session_params, params)
+  defp store_session_params(conn, params), do: IO.inspect Conn.put_session(conn, :pow_assent_session_params, params)
 
   defp store_request_path(conn, request_path), do: Conn.put_session(conn, :pow_assent_request_path, request_path)
 
